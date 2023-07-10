@@ -1,0 +1,28 @@
+#This is my first project where I created an store database.  I have listed all of the "Metal Roses" that are for sale.  I then selected the roses that cost less than $20. Next I sorted by the roses that cost more than $30.
+Lastly I sorted the information by the average cost.
+
+
+
+
+CREATE TABLE metal_roses (id INTEGER PRIMARY KEY, name TEXT, color TEXT, cost INTEGER, metal_type TEXT, onhand_quantity INTEGER);
+
+
+INSERT INTO metal_roses VALUES(1, "Red Rose", "Red", 41, "Cold rolled steel",10);
+INSERT INTO metal_roses VALUES(2, "Blue Rose", "Blue",42,"Cold rolled steel",9);
+INSERT INTO metal_roses VALUES(3, "Yellow Rose", "Yellow", 43, "Cold rolled steel",15);
+INSERT INTO metal_roses VALUES (4, "Pink Rose", "Pink",44, "Cold rolled steel",13);
+INSERT INTO metal_roses VALUES (5, "Purple Rose", "Purple", 41, "Cold rolled steel",10);
+INSERT INTO metal_roses VALUES (6,"Aluminum Rose", "Bare Aluminum",45, "Aluminum",20);
+INSERT INTO metal_roses VALUES (7, "Aluminum Rose","Powdercoated", 50,"Aluminum",18);
+INSERT INTO metal_roses VALUES (8, "Aluminum Rose", "Soda Can", 25, "Aluminum",22);
+INSERT INTO metal_roses VALUES (9, "Wooden Rose", "Bare wood",39, "Pine",14);
+INSERT INTO metal_roses VALUES (10,"Wooden Rose", "Stained",45, "oak",30);
+INSERT INTO metal_roses VALUES (11, "Copper Rose", "Copper", 55,"Copper",8);
+INSERT INTO metal_roses VALUES (12, "Stainless Steel Rose", "Stainless Steel",100,"Bare Metal", 20);
+INSERT INTO metal_roses VALUES (13, "Galvanised Rose","Silver",35,"Tin",2);
+INSERT INTO metal_roses VALUES (14, "1080 Steel", "rust", 60, "Steel",4);
+INSERT INTO metal_roses VALUES (15, "Cast Iron", "black", 75, "Cast Iron",3);
+SELECT name,SUM(onhand_quantity) FROM metal_roses GROUP BY name ;
+SELECT * FROM metal_roses WHERE cost >20;
+SELECT *FROM metal_roses WHERE cost < 30;
+SELECT AVG(cost) FROM metal_roses
